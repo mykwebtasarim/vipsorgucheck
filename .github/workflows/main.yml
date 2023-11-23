@@ -16,6 +16,6 @@ jobs:
       run: Set-ItemProperty -Path 'HKLM:SystemCurrentControlSetControlTerminal Server'-name "fDenyTSConnections" -Value 0
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
     - run: Set-ItemProperty -Path 'HKLM:SystemCurrentControlSetControlTerminal ServerWinStationsRDP-Tcp' -name "UserAuthentication" -Value 1
-    - run: Set-LocalUser -Name "admin" -Password (ConvertTo-SecureString -AsPlainText "Cargo2121!?" -Force)
+    - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
     - name: Create Tunnel
       run: .ngrokngrok.exe tcp 3389
